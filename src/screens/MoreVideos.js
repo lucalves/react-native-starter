@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, FlatList, Button, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 
 import VideoPlayer from '../components/VideoPlayer';
 
-const DATA_WITH_FIVE_ITEMS = [
+const DATA_WITH_FIFTH_ITEMS = [
   {
     id: 'Hsi0nPw7nZQ',
   },
@@ -19,18 +19,40 @@ const DATA_WITH_FIVE_ITEMS = [
   {
     id: 'LT7DXofCP0E',
   },
+  {
+    id: 'vuYOvVioBrc',
+  },
+  {
+    id: 'IvO1g9-eTM',
+  },
+  {
+    id: 'FpDvvC20ieE',
+  },
+  {
+    id: 'Ia7z4pMhDLY',
+  },
+  {
+    id: '1yiWhK_bgtg',
+  },
+  {
+    id: 'zJhHURu4qh8',
+  },
+  {
+    id: 'xbhFXAuuxWA',
+  },
+  {
+    id: 'Lpl8bcf8KHU',
+  },
+  {
+    id: '3mqRJzXFhOk',
+  },
 ];
 
-const Initial = ({ navigation }) => {
+const MoreVideos = () => {
   return (
     <View style={styles.container}>
-      <Button
-        color="white"
-        title="Next screen with 15 items"
-        onPress={() => navigation.navigate('MoreVideos')}
-      />
       <FlatList
-        data={DATA_WITH_FIVE_ITEMS}
+        data={DATA_WITH_FIFTH_ITEMS}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
@@ -50,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Initial;
+export default MoreVideos;

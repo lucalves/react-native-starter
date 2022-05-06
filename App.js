@@ -4,14 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import InitialScreen from './src/screens/Initial';
+import MoreVideosScreen from './src/screens/MoreVideos';
 
 function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Button
-        title="Click here to advance"
-        onPress={() => navigation.navigate('Initial')}
-      />
+      <Button title="Click here to advance" onPress={() => navigation.navigate('Initial')} />
     </View>
   );
 }
@@ -23,7 +21,8 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Initial" component={InitialScreen} />
+        <Stack.Screen name="Initial" options={{ headerTitle: '' }} component={InitialScreen} />
+        <Stack.Screen name="MoreVideos" component={MoreVideosScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
