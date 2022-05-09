@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import VideoPlayer from '../components/VideoPlayer';
+import VideoThumb from '../components/videoThumb';
 
 const DATA_WITH_FIVE_ITEMS = [
   {
@@ -13,24 +14,17 @@ const DATA_WITH_FIVE_ITEMS = [
     id: '9kY_e0z1rvA',
   },
   {
-    id: '0rsGyrN_Vy8',
+    id: 'LT7DXofCP0E',
   },
   {
-    id: 'LT7DXofCP0E',
+    id: '0rsGyrN_Vy8',
   },
 ];
 
 const Initial = () => {
   return (
     <View style={styles.container}>
-      <FlatList
-        data={DATA_WITH_FIVE_ITEMS}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => {
-          return <VideoPlayer videoId={item.id} />;
-        }}
-      />
+      <VideoThumb videoIdArray={DATA_WITH_FIVE_ITEMS}/>
     </View>
   );
 };
