@@ -5,7 +5,7 @@ import YoutubePlayer from 'react-native-youtube-iframe';
 
 const VideoPlayer = ({ videoId }) => {
   const [playing, setPlaying] = useState(false);
-  const height = (Dimensions.get('window').width / 16) * 8.5;
+  const height = (Dimensions.get('window').width / 16) * 9;
   const width = (Dimensions.get('window').height / 16) * 9;
 
   const onStateChange = useCallback((state) => {
