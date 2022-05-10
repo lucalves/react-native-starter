@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import InitialScreen from './src/screens/Initial';
+import { VideoScreen } from './src/screens/VideoScreen';
 
 function HomeScreen({ navigation }) {
   return (
@@ -20,10 +21,11 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={theme}>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Initial" component={InitialScreen} />
+        <Stack.Screen name="VideoScreen" component={VideoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -38,3 +40,16 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#1f1f1f',
+    card: '#440040',
+    text: '#fff',
+  },
+  
+};

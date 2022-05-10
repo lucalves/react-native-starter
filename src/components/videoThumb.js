@@ -1,10 +1,15 @@
 import React from "react";
 import { Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-export default ({ videoItem }) => {
+export default ({ videoItem, navigation }) => {
+
+    const pressThumb = (videoInfo) => {
+        navigation.navigate('VideoScreen', {item: videoInfo});
+    }
+
 
     return (
         <TouchableOpacity 
-            onPress={null}
+            onPress={() => pressThumb(videoItem)}
             style={style.thumbContainer}
         >
             <Image

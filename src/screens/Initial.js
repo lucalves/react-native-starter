@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import VideoService from '../services/videoService';
 import VideoThumb from '../components/videoThumb';
 
@@ -24,7 +24,7 @@ const DATA_WITH_FIVE_ITEMS = [
 
 
 
-const Initial = () => {
+export const Initial = ({ navigation }) => {
 
   const [result, setResult] = useState([]);
 
@@ -42,11 +42,10 @@ const Initial = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Test</Text>
       <FlatList
         data={result}
         keyExtractor={((item, index) => index)}
-        renderItem={({item}) => <VideoThumb videoItem={item} />
+        renderItem={({item}) => <VideoThumb videoItem={item} navigation={navigation} />
         }
       />
     </View>
