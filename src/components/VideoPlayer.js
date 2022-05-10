@@ -20,26 +20,13 @@ const VideoPlayer = ({ videoId }) => {
   }, []);
 
   return (
-    <View>
-      <View
-        pointerEvents={Platform.OS === 'android' ? 'none' : 'auto'}
-        style={styles.container}
-      >
-        <YoutubePlayer
-          height={height}
-          width={width}
-          play={playing}
-          videoId={videoId}
-          onChangeState={onStateChange}
-        />
-      </View>
-      {Platform.OS === 'android' ? (
-        <Button
-          title={playing ? 'Pausar' : 'Iniciar'}
-          onPress={togglePlaying}
-        />
-      ) : null}
-    </View>
+    <YoutubePlayer
+      height={height}
+      width={width}
+      play={playing}
+      videoId={videoId}
+      onChangeState={onStateChange}
+    />
   );
 };
 

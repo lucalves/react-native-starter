@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import VideoService from '../services/videoService';
-import VideoThumb from '../components/videoThumb';
+import VideoThumb from '../components/VideoThumb';
 
 
 const DATA_WITH_FIVE_ITEMS = [
