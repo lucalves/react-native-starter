@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import VideoPlayer from '../components/VideoPlayer';
+import VideoService from '../services/videoService';
 import VideoThumb from '../components/videoThumb';
+
 
 const DATA_WITH_FIVE_ITEMS = [
   {
@@ -21,10 +22,33 @@ const DATA_WITH_FIVE_ITEMS = [
   },
 ];
 
+
+
 const Initial = () => {
+
+  const [result, setResult] = useState([]);
+
+  const getResult = async () => {
+    const videoService = new VideoService();
+
+    const response = await videoService.getVideosInfo(DATA_WITH_FIVE_ITEMS);
+    setResult(response);
+  }
+
+  useEffect(() => {
+    getResult()
+  }, [])
+
+
   return (
     <View style={styles.container}>
-      <VideoThumb videoIdArray={DATA_WITH_FIVE_ITEMS}/>
+      <Text>Test</Text>
+      <FlatList
+        data={result}
+        keyExtractor={((item, index) => index)}
+        renderItem={({item}) => <VideoThumb videoItem={item} />
+        }
+      />
     </View>
   );
 };
@@ -34,6 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: '4%'
   },
 });
 
