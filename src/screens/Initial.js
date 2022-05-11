@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Initial = () => {
   return (
     <View style={styles.container}>
-      <Text>Initial Screen</Text>
+      <Text style={styles.title}>Initial Screen</Text>
     </View>
   );
 };
@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
   },
 });
 
