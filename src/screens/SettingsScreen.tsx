@@ -9,11 +9,11 @@ export function SettingsScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Configurações</Text>
+      <Text style={styles.title}>Settings</Text>
       <MyButton
         onPress={signOut}
         style={{backgroundColor: 'red'}}
-        title="Sair do App"
+        title="Logout"
       />
     </View>
   );

@@ -16,7 +16,7 @@ export function SignInScreen() {
       <Image
         resizeMode="contain"
         source={require('../assets/logo.png')}
-        style={{width: 100, height: 100}}
+        style={{width: 100, height: 100, marginVertical: 20}}
       />
       <MyTextInput placeholder="e-mail" value={email} onChangeText={setEmail} />
       <MyTextInput
@@ -26,7 +26,7 @@ export function SignInScreen() {
         onChangeText={setPassword}
       />
 
-      <MyButton title="Entrar no App" onPress={() => signIn(email, password)} />
+      <MyButton title="Login" onPress={() => signIn(email, password)} />
     </View>
   );
 }

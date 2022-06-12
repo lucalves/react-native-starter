@@ -13,11 +13,11 @@ export function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Essa tela só pode ser vista por usuários autenticados
+        This screen only can be accessed by authorized users
       </Text>
-      <MyButton title="Ir para Configurações" onPress={navigateToSettings} />
+      <MyButton title="Go to settings" onPress={navigateToSettings} />
       <Text>
-        by <Text style={styles.coffText}>Coffstack</Text>
+        by <Text style={styles.coffText}>Mikkaiser</Text>
       </Text>
     </View>
   );

@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   coffText: {
-    color: '#550AB1',
+    color: '#007acc',
     fontWeight: 'bold',
   },
 });
