@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, { useEffect } from 'react';
+import {View, Text, Alert} from 'react-native';
 import {MyButton} from '../components/MyButton';
 import {useAuth} from '../contexts/Auth';
 import {styles} from './styles';

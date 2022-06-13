@@ -6,7 +6,7 @@ export const loadAuthFromAsyncStorage = async (
   setAuth: Function,
   setLoading: Function,
 ): Promise<void> => {
-  const auth: string | null = await AsyncStorage.getItem('@AuthData');
+  const auth: string | null = await AsyncStorage.getItem('@UserData');
 
   if (auth) {
     setAuth(JSON.parse(auth) as AuthData);
