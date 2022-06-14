@@ -21,7 +21,9 @@ const config = {
 }
 
 const linking = {
-  prefixes: ['mikkaiser://app'],
+  prefixes: [
+    'http://www.metrologia.com/app',
+  ],
   config
 }
 
