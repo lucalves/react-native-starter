@@ -2,12 +2,22 @@ import React from "react"
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native"
 
 interface Props extends TouchableOpacityProps {
-    title: string
+    title: string,
+    isPositiveAction: boolean
 }
 
-export default ({ title, ...rest } : Props) => {
-    return(
-        <TouchableOpacity { ...rest } style={styles.buttonContainer}>
+export default ({ title, isPositiveAction, ...rest }: Props) => {
+    
+    if (!isPositiveAction) {
+        return (
+            <TouchableOpacity { ...rest } style={[styles.buttonContainer, styles.buttonBgRed]}>
+                <Text style={styles.buttonText}>{title}</Text>
+            </TouchableOpacity>
+        )
+    }
+
+    return (
+        <TouchableOpacity { ...rest } style={[styles.buttonContainer, styles.buttonBgBlue]}>
             <Text style={styles.buttonText}>{title}</Text>
         </TouchableOpacity>
     )
@@ -24,5 +34,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         padding: 10,
         borderRadius: 20
-    }
+    },
+    buttonBgRed: {
+        backgroundColor: '#e24a4a'
+    },
+    buttonBgBlue: {
+        backgroundColor: '#0a41d8'
+    },
 })
