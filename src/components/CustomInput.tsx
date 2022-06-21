@@ -1,11 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, TextInputProps} from 'react-native';
-import {Controller} from 'react-hook-form';
-
+import {Control, Controller, RegisterOptions} from 'react-hook-form';
 interface Props extends TextInputProps {
-  formControl: any;
-  name: any;
-  rules: any;
+  formControl: Control<any>;
+  name: string;
+  rules: RegisterOptions;
 }
 
 export default function CustomInput({

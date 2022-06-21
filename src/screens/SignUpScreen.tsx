@@ -4,13 +4,15 @@ import {Button, StyleSheet, View} from 'react-native';
 import CustomInput from '../components/CustomInput';
 import {EMAIL_REGEX} from '../utils/regex';
 
-export default function SignUp() {
-  const {control, handleSubmit, watch} =
-    useForm(/*{
-    defaultValues: {email: 'mikaelrsimoes19@gmail.com', password: '123'},
-  }*/);
+export type FormValues = {
+  email: string;
+  password: string;
+};
 
-  const handleSignUpUser = ({email, password}: any) => {
+export default function SignUp() {
+  const {control, handleSubmit, watch} = useForm<FormValues>();
+
+  const handleSignUpUser = ({email, password}: FormValues) => {
     console.log(email, password);
   };
 
