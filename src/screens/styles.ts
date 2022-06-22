@@ -19,4 +19,7 @@ export const styles = StyleSheet.create({
     color: '#007acc',
     fontWeight: 'bold',
   },
+  linksContainer: {
+    marginTop: 10,
+  },
 });

@@ -1,18 +1,38 @@
+import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {NativeStackNavigatorProps} from '@react-navigation/native-stack/lib/typescript/src/types';
 import React, {useState} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {MyButton} from '../components/MyButton';
 import {MyButtonLink} from '../components/MyButtonLink';
+import MyModal from '../components/MyModal';
 import {MyTextInput} from '../components/MyTextInput';
 import {useAuth} from '../contexts/Auth';
+import {AuthNavigationScreensList} from '../routes/AuthStack';
 import {styles} from './styles';
 
-export function SignInScreen() {
+export default function SignInScreen() {
   const {signIn} = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
+  const handleOpenModal = () => {
+    setModalVisible(true);
+  };
+
+  const {navigate} = useNavigation();
 
   return (
     <View style={[styles.container, {justifyContent: 'center'}]}>
+      <MyModal
+        visible={modalVisible}
+        closeFunction={handleCloseModal}
+        modalText="Please insert here your email"
+      />
       <Image
         resizeMode="contain"
         source={require('../assets/logo.png')}
@@ -27,7 +47,13 @@ export function SignInScreen() {
       />
 
       <MyButton title="Login" onPress={() => signIn(email, password)} />
-      <MyButtonLink title="Esqueci minha senha" />
+      <View style={styles.linksContainer}>
+        <MyButtonLink title="Esqueci minha senha" onPress={handleOpenModal} />
+        <MyButtonLink
+          title="Solicitar cadastro"
+          onPress={() => navigate('Register')}
+        />
+      </View>
     </View>
   );
 }

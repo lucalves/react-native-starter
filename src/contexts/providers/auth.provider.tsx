@@ -37,7 +37,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
 
   async function signOut(): Promise<void> {
     setAuth(undefined);
-    AsyncStorage.removeItem('@AuthData');
+    AsyncStorage.removeItem('@UserData');
     AsyncStorage.removeItem('@AccessToken');
     return;
   }

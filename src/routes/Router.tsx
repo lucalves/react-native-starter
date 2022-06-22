@@ -6,8 +6,6 @@ import AppStack from './AppStack';
 import AuthStack from './AuthStack';
 import {useAuth} from '../contexts/Auth';
 
-const Stack = createNativeStackNavigator();
-
 export default function Router() {
   const {authData, loading} = useAuth();
 
@@ -24,8 +22,20 @@ export default function Router() {
     );
   }
 
+  const config = {
+    screens: {
+      SignIn: 'signin',
+      Register: 'register',
+    },
+  };
+
+  const linking = {
+    prefixes: ['http://www.metrologia.com/app'],
+    config,
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       {authData ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
