@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Image, Text, View} from 'react-native';
 import {MyButton} from '../components/MyButton';
+import {MyButtonLink} from '../components/MyButtonLink';
 import {MyTextInput} from '../components/MyTextInput';
 import {useAuth} from '../contexts/Auth';
-import {authService} from '../services/auth.service';
 import {styles} from './styles';
 
 export function SignInScreen() {
@@ -27,6 +27,7 @@ export function SignInScreen() {
       />
 
       <MyButton title="Login" onPress={() => signIn(email, password)} />
+      <MyButtonLink title="Esqueci minha senha" />
     </View>
   );
 }

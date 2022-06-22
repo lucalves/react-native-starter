@@ -4,7 +4,7 @@ import {Alert} from 'react-native';
 import AuthData from '../../interfaces/auth-data.interface';
 import {authService} from '../../services/auth.service';
 import {loadAuthFromAsyncStorage} from '../../utils/async-storage.utils';
-import { decodeJwtToken } from '../../utils/jwt.utils';
+import {decodeJwtToken} from '../../utils/jwt.utils';
 import {AuthContext} from '../Auth';
 
 type AuthProviderProps = {
@@ -26,7 +26,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
       const userDecodedData = decodeJwtToken(auth.token);
 
       AsyncStorage.setItem('@UserData', JSON.stringify(userDecodedData));
-      AsyncStorage.setItem('@AcessToken', JSON.stringify(auth.token));
+      AsyncStorage.setItem('@AccessToken', JSON.stringify(auth.token));
 
       return auth;
     } catch (error: any) {
@@ -38,6 +38,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
   async function signOut(): Promise<void> {
     setAuth(undefined);
     AsyncStorage.removeItem('@AuthData');
+    AsyncStorage.removeItem('@AccessToken');
     return;
   }
 
