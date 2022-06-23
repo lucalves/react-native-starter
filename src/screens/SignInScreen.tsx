@@ -8,7 +8,7 @@ import {MyButtonLink} from '../components/MyButtonLink';
 import MyModal from '../components/MyModal';
 import {MyTextInput} from '../components/MyTextInput';
 import {useAuth} from '../contexts/Auth';
-import {AuthNavigationScreensList} from '../routes/AuthStack';
+import {AuthNavigationProps} from '../routes/Models/authStackModel';
 import {styles} from './styles';
 
 export default function SignInScreen() {
@@ -24,7 +24,7 @@ export default function SignInScreen() {
     setModalVisible(true);
   };
 
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<AuthNavigationProps>();
 
   return (
     <View style={[styles.container, {justifyContent: 'center'}]}>
