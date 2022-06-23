@@ -2,13 +2,9 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignInScreen from '../screens/SignInScreen';
 import {RegisterScreen} from '../screens/RegisterScreen';
+import {AuthStackScreenProps} from './Models/authStackModel';
 
-export type AuthNavigationScreensList = {
-  SignIn: undefined;
-  Register: undefined;
-};
-
-const Stack = createNativeStackNavigator<AuthNavigationScreensList>();
+const Stack = createNativeStackNavigator<AuthStackScreenProps>();
 
 export default function AuthStack() {
   return (

@@ -1,14 +1,15 @@
-import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {NativeStackNavigatorProps} from '@react-navigation/native-stack/lib/typescript/src/types';
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 import {MyButton} from '../components/MyButton';
 import {MyButtonLink} from '../components/MyButtonLink';
 import MyModal from '../components/MyModal';
 import {MyTextInput} from '../components/MyTextInput';
 import {useAuth} from '../contexts/Auth';
-import {AuthNavigationScreensList} from '../routes/AuthStack';
+import {
+  AuthPropsNavigationStack,
+  AuthStackScreenProps,
+} from '../routes/Models/authStackModel';
 import {styles} from './styles';
 
 export default function SignInScreen() {
@@ -24,7 +25,7 @@ export default function SignInScreen() {
     setModalVisible(true);
   };
 
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<AuthPropsNavigationStack>();
 
   return (
     <View style={[styles.container, {justifyContent: 'center'}]}>
