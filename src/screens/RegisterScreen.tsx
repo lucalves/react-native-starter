@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Alert, Image, View} from 'react-native';
+import {Alert, Image, Text, View} from 'react-native';
 import {MyButton} from '../components/MyButton';
 import {MyTextInput} from '../components/MyTextInput';
 import {styles} from './styles';
@@ -10,18 +10,18 @@ export function RegisterScreen() {
   const [socialReason, setSocialReason] = useState('');
 
   const handleRequestRegister = () => {
-    Alert.alert('A Register was requested');
+    Alert.alert('Seu cadastro foi solicitado!');
   };
 
   return (
     <View style={[styles.container, {justifyContent: 'center'}]}>
       <Image
         resizeMode="contain"
-        source={require('../assets/logo.png')}
-        style={{width: 100, height: 100, marginVertical: 20}}
+        source={require('../assets/senai-logo.png')}
+        style={{width: 300, height: 200}}
       />
       <MyTextInput
-        placeholder="Social Reason"
+        placeholder="Razão Social"
         value={socialReason}
         onChangeText={setSocialReason}
       />
@@ -31,8 +31,12 @@ export function RegisterScreen() {
         value={email}
         onChangeText={setEmail}
       />
-      <MyTextInput placeholder="Email" value={cnpj} onChangeText={setCnpj} />
-      <MyButton title="Require" onPress={handleRequestRegister} />
+      <MyTextInput placeholder="E-mail" value={cnpj} onChangeText={setCnpj} />
+      <MyButton
+        title="Requisitar"
+        style={{width: '100%'}}
+        onPress={handleRequestRegister}
+      />
     </View>
   );
 }

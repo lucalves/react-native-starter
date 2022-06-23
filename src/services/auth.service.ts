@@ -9,7 +9,7 @@ async function signIn(email: string, password: string): Promise<AuthData> {
             'eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1pa2FlbHJzaW1vZXMxOUBnbWFpbC5jb20iLCJuYW1lIjoiTWlrYWVlbCBSaWJlaXJvIn0.D7mlU9W6XCGLBRS_TEm9lyBOq6gg--RaRZEOjWXiP4M',
         });
       } else {
-        reject(new Error('Invalid credentials'));
+        reject(new Error('Credenciais inválidas!'));
       }
     }, 500);
   });

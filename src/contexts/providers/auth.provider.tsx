@@ -30,7 +30,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
 
       return auth;
     } catch (error: any) {
-      Alert.alert(error.message, 'Invalid credentials');
+      Alert.alert(error.message, 'Credenciais inválidas!');
       throw error;
     }
   }

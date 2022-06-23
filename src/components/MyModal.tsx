@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {
-  Alert,
   Modal,
   ModalProps,
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -34,15 +32,19 @@ export default ({modalText, closeFunction, ...rest}: Props) => {
         <View style={styles.modalContent}>
           {sent ? (
             <Text style={styles.passwordSent}>
-              The password has been sent to your email.
+              A senha foi enviada para o seu e-mail.
             </Text>
           ) : (
             <>
               <Text style={styles.titleText}>{modalText}</Text>
               <MyTextInput />
               <View style={styles.buttonsContainer}>
-                <MyButton onPress={handleSendMail} title="Send" />
-                <MyButton onPress={closeFunction} title="Close" />
+                <MyButton
+                  style={{marginRight: 5}}
+                  onPress={handleSendMail}
+                  title="Enviar"
+                />
+                <MyButton onPress={closeFunction} title="Fechar" />
               </View>
             </>
           )}
@@ -62,11 +64,11 @@ const styles = StyleSheet.create({
   modalContent: {
     backgroundColor: 'white',
     width: '90%',
-    padding: 10,
+    padding: 20,
   },
   buttonsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   titleText: {
     fontSize: 18,

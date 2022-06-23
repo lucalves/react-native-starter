@@ -12,10 +12,22 @@ export function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        This screen only can be accessed by authorized users
+      <Text
+        style={
+          (styles.title,
+          {
+            fontSize: 22,
+            textAlign: 'center',
+            marginTop: '15%',
+          })
+        }>
+        Essa tela só pode ser acessada por usuários logados.
       </Text>
-      <MyButton title="Go to settings" onPress={navigateToSettings} />
+      <MyButton
+        style={{width: '100%'}}
+        title="Acessar configurações"
+        onPress={navigateToSettings}
+      />
       <Text>
         by <Text style={styles.coffText}>Mikkaiser</Text>
       </Text>

@@ -20,6 +20,7 @@ export function MyButtonLink({title, style, ...rest}: MyButtonProps) {
 const styles = StyleSheet.create({
   text: {
     color: '#0089c9',
+    marginVertical: 5,
     fontSize: 16,
     textAlign: 'center',
   },

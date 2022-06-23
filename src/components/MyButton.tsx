@@ -9,6 +9,7 @@ import {
 interface MyButtonProps extends TouchableOpacityProps {
   title: string;
 }
+
 export function MyButton({title, style, ...rest}: MyButtonProps) {
   return (
     <TouchableOpacity {...rest} style={[styles.button, style]}>
@@ -19,14 +20,14 @@ export function MyButton({title, style, ...rest}: MyButtonProps) {
 
 const styles = StyleSheet.create({
   text: {
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: '#FFF',
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
   },
   button: {
-    backgroundColor: '#007acc',
-    borderRadius: 8,
-    padding: 20,
+    backgroundColor: '#005193',
+    padding: 12,
+    width: '50%',
   },
 });

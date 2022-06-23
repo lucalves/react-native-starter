@@ -6,18 +6,17 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 16,
-    paddingBottom: 32,
+    paddingBottom: 64,
   },
   title: {
-    fontWeight: 'bold',
-
-    fontSize: 20,
+    fontSize: 22,
     textAlign: 'center',
+    marginTop: 30,
   },
   coffText: {
     color: '#007acc',
     fontWeight: 'bold',
+    fontSize: 18,
   },
   linksContainer: {
     marginTop: 10,

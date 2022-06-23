@@ -11,7 +11,7 @@ import {useAuth} from '../contexts/Auth';
 import {AuthNavigationScreensList} from '../routes/AuthStack';
 import {styles} from './styles';
 
-export default function SignInScreen() {
+export default function SignInScreen({navigation}: any) {
   const {signIn} = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,34 +24,36 @@ export default function SignInScreen() {
     setModalVisible(true);
   };
 
-  const {navigate} = useNavigation();
-
   return (
     <View style={[styles.container, {justifyContent: 'center'}]}>
       <MyModal
         visible={modalVisible}
         closeFunction={handleCloseModal}
-        modalText="Please insert here your email"
+        modalText="Insira seu e-mail"
       />
       <Image
         resizeMode="contain"
-        source={require('../assets/logo.png')}
-        style={{width: 100, height: 100, marginVertical: 20}}
+        source={require('../assets/senai-logo.png')}
+        style={{width: 280, height: 200, marginVertical: 5}}
       />
-      <MyTextInput placeholder="e-mail" value={email} onChangeText={setEmail} />
+      <MyTextInput placeholder="E-mail" value={email} onChangeText={setEmail} />
       <MyTextInput
-        placeholder="senha"
+        placeholder="Senha"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
 
-      <MyButton title="Login" onPress={() => signIn(email, password)} />
+      <MyButton
+        title="Login"
+        style={{width: '100%'}}
+        onPress={() => signIn(email, password)}
+      />
       <View style={styles.linksContainer}>
         <MyButtonLink title="Esqueci minha senha" onPress={handleOpenModal} />
         <MyButtonLink
           title="Solicitar cadastro"
-          onPress={() => navigate('Register')}
+          onPress={() => navigation.navigate('Register')}
         />
       </View>
     </View>
