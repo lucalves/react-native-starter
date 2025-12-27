@@ -1,6 +1,6 @@
 # react-native-starter
 
-Some structures boiterplate to start development in React Native.
+Some structures boiterplate to start development in React Native tech.
 
 ## License
 
